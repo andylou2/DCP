@@ -8,7 +8,9 @@ def squaresort(input):
 	neg = peekable(input[i-1::-1])
 	output = []
 	while pos or neg: 
-		val, iter = min((pos.peek(float('inf')),pos), (-neg.peek(-float('inf')),neg), key=lambda x: x[0])
+		val, iter = min((pos.peek(float('inf')),	 pos),\
+						(abs(neg.peek(float('inf'))),neg),\
+						key=lambda x: x[0])
 		output+= [val**2]
 		iter.next()
 	return output
