@@ -37,9 +37,6 @@ def findMinMissingFast(arr):
 			# i-=1
 		i+=1
 
-
-		# input[i] >= 0 and input[i] < len(input) and input[i] != i and input[input[i]] != input[i]:
-
 	for i in range(len(arr)):
 		if arr[i] != i + 1:
 			return i + 1
