@@ -14,6 +14,38 @@ character = {
 	'miruru':(170,290),
 	'clause':(64,350)
 }
+filters = {
+	'weapon':			(183,172),
+	'armor':			(183,190),
+	'secondary':		(183,208),
+	'accessory':		(183,226),
+	'orb':				(183,242),
+	't8':				(368,293),
+	'0*':				(456,172)
+}
+stat_filters = {
+	'P.Block':			(183,172),
+	'CC Resist':		(183,172),
+	'Crit Resist':		(183,172),
+	'M.Crit Resist':	(183,172),
+	'Max HP':			(183,172),
+	'ACC':				(183,172),
+	'P.Dodge':			(183,172),
+	'DEF':				(183,172),
+	'Debuff ACC':		(183,172),
+	'MP/Sec':			(183,172),
+	'P.Def':			(183,172),
+	'Penetration':		(183,172),
+	'Block':			(183,172),
+	'M.Block':			(183,172),
+	'MP/Attack':		(183,172),
+	'M.Def':			(183,172),
+	'Lifesteal':		(183,172),
+	'Dodge':			(183,172),
+	'M.Dodge':			(183,172),
+	'P.Crit Resist':	(183,172)
+
+}
 
 """
 Before running, resize window to 
@@ -73,12 +105,13 @@ def scan_chat():
 		handle_input(text[4:].strip())
 	
 def sell(input):
-	click(65,250)
-	click(550,340)
-	click(370,340)
-	click(385,335)
-	click(380,295)
-	click(400,40)
+	click(65,250)		#manage inventory
+	click(550,340)		#sell
+	click(370,340)		#sell all
+	click(385,335)		#sell
+	click(380,295)		#confirm sell
+	click(535,80)		#close sell all menu
+	click(110,40)
 	
 def handle_input(input):
 	if input in commands.keys():
@@ -103,6 +136,10 @@ commands = {
 def preprocess(image):
 	image = invert(image)
 	return cv2.medianBlur(image, 3)
+def stam(image):
+	return
+def inventory(image, ):
+	return
 def log_position():
 	print('Press Ctrl-C to quit.')
 	try:
