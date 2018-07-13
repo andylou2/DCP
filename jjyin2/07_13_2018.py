@@ -16,17 +16,10 @@ def decode(message):
 	
 	#Due to how 0 must be handled, slightly easier to go from right to left
 	message = ''.join(reversed(message))
-	print(message[0:2])
 	for i, x in enumerate(message):
-		#impossible to take 0 as standalone 
-		if x == '0':
-			prev = curr
-		#must be parsed as 10 or 20
-		elif (i!= 0 and message[i-1] == '0') or (i>1 and message[i-2]=='0'):
-			curr = 1+curr
-			prev = curr
-		#11-19, 21-26 with no trailing zero
-		elif message[i:i+2][::-1] in valid_pairs:
+		
+		#make sure to not break up a 10 or 20
+		if (i<2 or message[i-2]!='0') and message[i:i+2][::-1] in valid_pairs:
 			temp = curr+prev
 			prev = curr
 			curr = temp
@@ -34,7 +27,7 @@ def decode(message):
 			prev = curr
 	return curr
 	
-print(decode('19911'))
+print(decode('1119911'))
 			
 		
 			
