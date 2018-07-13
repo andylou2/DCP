@@ -23,7 +23,6 @@ def decode(message):
 			prev = curr
 		#must be parsed as 10 or 20
 		elif (i!= 0 and message[i-1] == '0') or (i>1 and message[i-2]=='0'):
-			curr = 1+curr
 			prev = curr
 		#11-19, 21-26 with no trailing zero
 		elif message[i:i+2][::-1] in valid_pairs:
@@ -34,7 +33,7 @@ def decode(message):
 			prev = curr
 	return curr
 	
-print(decode('19911'))
+print(decode('1109911'))
 			
 		
 			
