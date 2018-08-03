@@ -19,11 +19,11 @@ def justify(arr, k):
 	res = []
 	for i in range(1, len(arr)):
 		word = arr[i]
-		if len(currWord) + len(word) > k:
-			res.append(currWord)
+		if len(currWord) + len(word) > k:			#you don't leave room for a space here? so k=10, ["happy","ghoul"] would end up on the same line.
+			res.append(currWord)					
 			currWord = word
 		else:
-			currWord = currWord + " " + word
+			currWord = currWord + " " + word		#bit of unnecessary conversion between [string] to string
 
 	res.append(currWord)
 	res = padSpaces(res, k)
@@ -52,8 +52,9 @@ def padSpaces(arr, k):
 
 def main():
 	arr = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
-	k = 16
-	print(justify(arr, k))
+	arr2= ["happy","ghoul"]
+	k = 10
+	print(justify(arr2, k))
 
 if __name__ == '__main__':
 	main()
