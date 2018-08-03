@@ -35,13 +35,13 @@ def padSpaces(arr, k):
 		toks = str.split(" ")
 		diff = k - len(str)
 		l = len(toks) - 1
-		for i in range(len(toks) - 1):
+		for i in range(len(toks) - 1):				#unnecessary check if your first function did it's job correctly.
 			toks[i] = toks[i] + " "
 
 		i = 0
 		while diff > 0:
-			i += 1
-			toks[i % l] = toks[i % l] + " "
+			i += 1									#Should go after the next line. First word missing a space.
+			toks[i % l] = toks[i % l] + " "			#+=
 			diff -= 1
 		i = 0
 		res.append(''.join(toks))
