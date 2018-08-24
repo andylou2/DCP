@@ -21,3 +21,4 @@ def swap(array, i, j):
 input0 = [0,5,3,2,2, 1, 4]
 
 print(first_missing(input0))
+#Testing git commit
